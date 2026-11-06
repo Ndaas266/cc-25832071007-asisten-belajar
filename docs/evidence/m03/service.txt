@@ -1,0 +1,18 @@
+● cc-m03.service - PTI 2802 M03 Flask Application
+     Loaded: loaded (/etc/systemd/system/cc-m03.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2026-11-06 19:27:17 WIB; 5min ago
+   Main PID: 701 (gunicorn)
+      Tasks: 3 (limit: 2315)
+     Memory: 38.2M (peak: 38.5M)
+        CPU: 720ms
+     CGroup: /system.slice/cc-m03.service
+             ├─701 /srv/cc-m03/.venv/bin/python /srv/cc-m03/.venv/bin/gunicorn --workers 1 --threads 2 --bind 127.0.0.1:8000 --timeout 30 --access-logfile - --error-logfile - app:app
+             └─806 /srv/cc-m03/.venv/bin/python /srv/cc-m03/.venv/bin/gunicorn --workers 1 --threads 2 --bind 127.0.0.1:8000 --timeout 30 --access-logfile - --error-logfile - app:app
+
+Nov 06 19:27:18 cc-m03-25832071007 gunicorn[701]: [2026-11-06 19:27:18 +0700] [701] [INFO] Starting gunicorn 26.2.0
+Nov 06 19:27:19 cc-m03-25832071007 gunicorn[701]: [2026-11-06 19:27:18 +0700] [701] [INFO] Listening at: http://127.0.0.1:8000 (701)
+Nov 06 19:27:19 cc-m03-25832071007 gunicorn[701]: [2026-11-06 19:27:18 +0700] [701] [INFO] Using worker: gthread
+Nov 06 19:27:19 cc-m03-25832071007 gunicorn[806]: [2026-11-06 19:27:18 +0700] [806] [INFO] Booting worker with pid: 806
+Nov 06 19:27:19 cc-m03-25832071007 gunicorn[701]: [2026-11-06 19:27:18 +0700] [701] [ERROR] Control server error: [Errno 13] Permission denied: '/home/cloudstudent'
+Nov 06 19:27:19 cc-m03-25832071007 gunicorn[806]: 127.0.0.1 - - [06/Nov/2026:19:27:18 +0700] "GET /health HTTP/1.1" 200 91 "-" "curl/8.21.0"
+Warning: journal has been rotated since unit was started and some journal files were not opened due to insufficient permissions, output may be incomplete.
